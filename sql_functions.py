@@ -3,6 +3,7 @@ import mysql.connector
 from datetime import datetime
 from mysql.connector import Error
 import pandas as pd
+import os
 
 def create_database():
     mydb = mysql.connector.connect(
@@ -148,15 +149,23 @@ def transform_data(data):
     # Convert the data into a DataFrame for further manipulation
     df = pd.DataFrame(data, columns=["seasonally_adj", "data_type_code", "category_code", "cell_value", "time"])
     df['time'] = pd.to_datetime(df['time'])  # Ensure time is in datetime format
-    transformed_df = df.pivot_table(index='time', columns='category_code', values='cell_value', aggfunc='mean')
-    transformed_df.sort_index(inplace=True)
-    return transformed_df
 
+    # Create a directory for the CSV files if it doesn't exist
+    output_dir = 'data/processed'
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
+    # Group the data by 'data_type_code' and create a separate CSV file for each group
+    for data_type, group in df.groupby('data_type_code'):
+        # Pivot the table without aggregation, assuming each combination of 'time' and 'category_code' has one value
+        transformed_df = group.pivot(index='time', columns='category_code', values='cell_value')
+        transformed_df.sort_index(inplace=True)
 
-def load_to_csv(df, file_name='transformed_data.csv'):
-    df.to_csv(file_name)
-    print(f"Data loaded to {file_name} successfully.")
+        # Create a filename for the specific data_type_code and save it as a CSV
+        file_path = os.path.join(output_dir, f'{data_type}_data.csv')
+        transformed_df.to_csv(file_path)
+
+        print(f"Data for {data_type} saved to {file_path}")
 
 
 
@@ -169,7 +178,6 @@ def main():
         insert_data(connection)
         data = query_data(connection)
         transformed_data = transform_data(data)
-        load_to_csv(transformed_data)
         connection.close()
 
 if __name__ == "__main__":
