@@ -3,16 +3,16 @@
 This project demonstrates an ETL pipeline that extracts sales data from the [Data.gov API](https://api.data.gov/), transforms it, and loads it into a SQL database for further analysis.
 
 ## Features
-- **API Integration**: Fetches dynamic retail sales data from Data.gov.
-- **Data Transformation**: Cleans and aggregates the data for better insights.
+- **API Integration**: Fetches dynamic retail sales data from Data.gov from 2020 to 2024.
+- **Data Extraction, Transformation and Loading**: Extracts only seasonally adjusted data that corresponds to the monthly percentual changes in the sales for each data type in each category. 
+- **Data Transformation**: Aggregates the data
 - **Database Loading**: Stores the processed data in a relational database using SQL.
-- **Automation**: Script can be scheduled using cron jobs for automatic daily updates.
 
 ## Setup Instructions
 
 ### Prerequisites
 - Python 3.8 or above
-- PostgreSQL or MySQL (or any preferred SQL database)
+- MySQL 
 - API Key from Data.gov (sign up [here](https://api.data.gov/signup/))
 
 ### Installation
@@ -34,25 +34,11 @@ This project demonstrates an ETL pipeline that extracts sales data from the [Dat
     ```
 
 4. Run the ETL pipeline:
-    1. **Extract data** from the API:
+    1. **Retrieve data** from the API:
        ```bash
        python extract_data.py
        ```
-    2. **Transform** the extracted data:
+    2. **Extract, Transform and Load** the raw data:
        ```bash
-       python transform.py
+       run_etl.py
        ```
-    3. **Load** the data into the database:
-       ```bash
-       python load.py
-       ```
-
-### Automating the Pipeline
-You can schedule the pipeline to run at regular intervals using cron jobs.
-
-```bash
-# Open the cron editor
-crontab -e
-
-# Add this line to schedule the ETL pipeline to run daily at 2 AM
-0 2 * * * /usr/bin/python3 /path/to/your/repo/extract_data.py
