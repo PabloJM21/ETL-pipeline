@@ -3,11 +3,13 @@
 This project is an ETL pipeline that extracts data from a public API and transforms it for better analysis.
 
 The data extracted from the API corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. It contains the following variables:
-- **`data_type_code`**
 
-`seasonally_adj`
+- `data_type_code`: The code corresponding to the monthly outcome and the monthly percentual change in the outcome of each data type. These data types, along with their codes are: Value of Shipments (VS, MPCVS), New Orders (NO, MPCNO), Unfilled Orders (UO, MPCUO) and Total Inventories (TI, MPCTI).  
+- `seasonally_adj`: Denotes wheather the outcome has been seasonally adjusted. 
+- `category_code`: Indicates the manufacture category.
+- `cell_value`: The outcome of the corresponding data type.
+- `time_slot_id`: 
 
-`category_code`,`cell_value`,`time_slot_id`
 
 
 Each CSV file within the `processed` data folder contains the monthly percentual change in a specific data type for several manufacturing categories (which can be found [here](INSERT_LINK_HERE)). 
