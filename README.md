@@ -13,12 +13,21 @@ The specific data types included in this project are:
 - **Unfilled Orders (MPCUO)**
 - **Total Inventories (MPCTI)**
 
-- 
-## Features
-- **API Integration**: Fetches dynamic retail sales data from Data.gov from 2020 to 2024.
-- **Data Extraction, Transformation and Loading**: Extracts only seasonally adjusted data that corresponds to the monthly percentual changes in the sales for each data type in each category. 
-- **Data Transformation**: Aggregates the data
-- **Database Loading**: Stores the processed data in a relational database using SQL.
+## Structure
+
+sales-data-etl/
+│
+├── data/
+│   ├── raw_data.json                  # Raw data extracted from the API
+│   └── processed/                     # Processed CSV files
+│       ├── MPCVS_data.csv             # CSV file for Value of Shipments
+│       ├── MPCNO_data.csv             # CSV file for New Orders
+│       ├── MPCUO_data.csv             # CSV file for Unfilled Orders
+│       └── MPCTI_data.csv             # CSV file for Total Inventories
+│
+├── extract_data.py                    # Script to extract the raw data
+├── run_etl.py                         # Script for the etl pipeline
+
 
 ## Setup Instructions
 
