@@ -25,7 +25,7 @@ The ETL pipeline is divided into two main stages:
 The data extracted contains the following variables:
 
 - `data_type_code`: The code corresponding to the data types, starting with "MPC" for the montlhy percentual change.
-- `seasonally_adj`: Denotes wheather the outcome has been seasonally adjusted. 
+- `seasonally_adj`: Denotes whether the outcome has been seasonally adjusted. 
 - `category_code`: Indicates the manufacture category.
 - `cell_value`: The outcome of the corresponding data type.
 - `time`: Indicates the year and month. 
