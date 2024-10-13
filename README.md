@@ -15,8 +15,8 @@ The specific data types included in this project are:
 
 ## Structure
 
+```plaintext
 sales-data-etl/
-│
 ├── data/
 │   ├── raw_data.json                  # Raw data extracted from the API
 │   └── processed/                     # Processed CSV files
