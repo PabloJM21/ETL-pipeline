@@ -1,10 +1,16 @@
 # ETL Pipeline for Manufacturers’ Shipments, Inventories, and Orders
 
-This project is an ETL pipeline that processes data from the U.S. Census Bureau related to manufacturers’ shipments, inventories, and orders. The pipeline extracts data from a public API, transforms it into a usable format, and loads it into a structured set of CSV files.
+This project is an ETL pipeline that extracts data from a public API and transforms it for better analysis.
 
-## Data Description
+The data extracted from the API corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. It contains the following variables:
+`data_type_code`
 
-The data corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. Each CSV file within the `processed` data folder contains the monthly percentual change in a specific data type for several manufacturing categories (which can be found [here](INSERT_LINK_HERE)). 
+`seasonally_adj`
+
+`category_code`,`cell_value`,`time_slot_id`
+
+
+Each CSV file within the `processed` data folder contains the monthly percentual change in a specific data type for several manufacturing categories (which can be found [here](INSERT_LINK_HERE)). 
 
 The specific data types included in this project are:
 
