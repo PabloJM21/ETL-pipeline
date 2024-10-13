@@ -28,6 +28,7 @@ sales-data-etl/
 ├── extract_data.py                    # Script to extract the raw data
 ├── run_etl.py                         # Script for the etl pipeline
 
+```
 
 ## Setup Instructions
 
