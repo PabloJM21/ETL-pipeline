@@ -23,7 +23,7 @@ The data extracted contains the following variables:
 - `cell_value`: The outcome of the corresponding data type.
 - `time`: Indicates the year and month. 
 
-# Pipeline structure
+
 
 
 
@@ -41,7 +41,7 @@ sales-data-etl/
 │       └── MPCTI_data.csv             # CSV file for Total Inventories
 │
 ├── extract_data.py                    # Script to extract the raw data from the API corresponding to the last 5 years
-├── run_etl.py                         # Script for the etl pipeline. Filters seasonally adjusted data for the monthly percentage change and t
+├── run_etl.py                         # Script for the etl pipeline. Filters, transforms and loads data into four csv files.
 
 ```
 
