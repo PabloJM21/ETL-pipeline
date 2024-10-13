@@ -4,11 +4,11 @@ This project is an ETL pipeline that extracts data from a public API and transfo
 
 The data extracted from the API corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. It contains the following variables:
 
-- `data_type_code`: The code corresponding to the monthly outcome and the monthly percentual change in the outcome of each data type. These data types, along with their codes are: Value of Shipments (VS, MPCVS), New Orders (NO, MPCNO), Unfilled Orders (UO, MPCUO) and Total Inventories (TI, MPCTI).  
+- `data_type_code`: The code corresponding to the monthly outcome and its percentual change of each data type. These data types, along with their codes are: Value of Shipments (VS, MPCVS), New Orders (NO, MPCNO), Unfilled Orders (UO, MPCUO) and Total Inventories (TI, MPCTI).  
 - `seasonally_adj`: Denotes wheather the outcome has been seasonally adjusted. 
 - `category_code`: Indicates the manufacture category.
 - `cell_value`: The outcome of the corresponding data type.
-- `time_slot_id`: 
+- `time`: Indicates the year and month. 
 
 
 
@@ -33,8 +33,8 @@ sales-data-etl/
 │       ├── MPCUO_data.csv             # CSV file for Unfilled Orders
 │       └── MPCTI_data.csv             # CSV file for Total Inventories
 │
-├── extract_data.py                    # Script to extract the raw data
-├── run_etl.py                         # Script for the etl pipeline
+├── extract_data.py                    # Script to extract the raw data from the API corresponding to the last 5 years
+├── run_etl.py                         # Script for the etl pipeline. Filters seasonally adjusted data for the monthly percentage change and t
 
 ```
 
