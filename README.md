@@ -9,7 +9,7 @@ A more accurate description of the dataset can be found here: https://api.census
 The ETL pipeline is divided into two main stages:
 
 1. **Data Extraction**:  
-   Raw data is extracted from the U.S. Census Bureau API, covering the last five years of Manufacturers’ Shipments, Inventories, and Orders data. This data is stored in a JSON file for further processing.
+   Raw data is extracted from the U.S. Census Bureau API, covering the last five years of Manufacturers’ Shipments, Inventories, and Orders data. This data is stored in a JSON file.
 
 2. **Data Transformation and Organization**:  
    The extracted data is filtered to retain only seasonally adjusted records that represent monthly percentual changes. The data is then reorganized such that the cell values are separated by time and manufacturing category. Finally, the data is saved into four separate CSV files, each corresponding to one of the following data types:  
