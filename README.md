@@ -10,8 +10,8 @@ The pipeline is divided in two stages.
 
 In the first one, raw data is extracted from the API corresponding to the last 5 years.
 
-In the second one, the data is filtered to retain only the monthly percentual change that has been seasonally adjusted. Then, it is organized such that the cell values are split across time and category. They are stored in different csv files according to the four data types.
-This allows to compare the evolution of the monthly percentual changes in the data types between all categories. 
+In the second one, the data is filtered to retain only seasonally adjusted data in the form of monthly percentual changes. Then, it is organized such that the cell values are split across time and category. They are stored in different csv files according to the four data types.
+This allows to compare the evolution of the monthly percentual changes in the value of shipments, new orders , unfilled orders and total inventories between all categories. 
 
 # Data variables
 
