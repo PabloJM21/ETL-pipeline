@@ -6,18 +6,25 @@ The data extracted from the API corresponds to Manufacturers’ Shipments, Inven
 
 A more accurate description of the dataset can be found here: https://api.census.gov/data/timeseries/eits/advm3.html.
 
-The pipeline is divided in two stages. 
+The ETL pipeline is divided into two main stages:
 
-In the first one, raw data is extracted from the API corresponding to the last 5 years.
+1. **Data Extraction**:  
+   Raw data is extracted from the U.S. Census Bureau API, covering the last five years of Manufacturers’ Shipments, Inventories, and Orders data. This data is stored in a JSON file for further processing.
 
-In the second one, the data is filtered to retain only seasonally adjusted data in the form of monthly percentual changes. Then, it is organized such that the cell values are split across time and category. They are stored in different csv files according to the four data types.
-This allows to compare the evolution of the monthly percentual changes in the value of shipments, new orders , unfilled orders and total inventories between all categories. 
+2. **Data Transformation and Organization**:  
+   The extracted data is filtered to retain only seasonally adjusted records that represent monthly percentual changes. The data is then reorganized such that the cell values are separated by time and manufacturing category. Finally, the data is saved into four separate CSV files, each corresponding to one of the following data types:  
+   - Value of Shipments (MPCVS)  
+   - New Orders (MPCNO)  
+   - Unfilled Orders (MPCUO)  
+   - Total Inventories (MPCTI)  
+
+   This structure allows for easy comparison of the evolution of monthly percentual changes across different manufacturing categories for each data type.
 
 # Data variables
 
 The data extracted contains the following variables:
 
-- `data_type_code`: The code corresponding to the monthly outcome and its percentual change of each data type. These data types, along with their codes are: Value of Shipments (VS, MPCVS), New Orders (NO, MPCNO), Unfilled Orders (UO, MPCUO) and Total Inventories (TI, MPCTI).  
+- `data_type_code`: The code corresponding to the data types, starting with "MPC" for the montlhy percentual change.
 - `seasonally_adj`: Denotes wheather the outcome has been seasonally adjusted. 
 - `category_code`: Indicates the manufacture category.
 - `cell_value`: The outcome of the corresponding data type.
