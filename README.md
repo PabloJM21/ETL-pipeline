@@ -13,7 +13,7 @@ The specific data types included in this project are:
 - **Unfilled Orders (MPCUO)**
 - **Total Inventories (MPCTI)**
 
-## Structure
+## Project Directory Structure
 
 ```plaintext
 sales-data-etl/
