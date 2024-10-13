@@ -2,7 +2,13 @@
 
 This project is an ETL pipeline that extracts data from a public API and transforms it for better analysis.
 
-The data extracted from the API corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. It contains the following variables:
+The data extracted from the API corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. 
+
+A more accurate description of the dataset can be found [here]([(https://api.census.gov/data/timeseries/eits/advm3.html)]).
+
+# Data variables
+
+The data extracted contains the following variables:
 
 - `data_type_code`: The code corresponding to the monthly outcome and its percentual change of each data type. These data types, along with their codes are: Value of Shipments (VS, MPCVS), New Orders (NO, MPCNO), Unfilled Orders (UO, MPCUO) and Total Inventories (TI, MPCTI).  
 - `seasonally_adj`: Denotes wheather the outcome has been seasonally adjusted. 
@@ -10,16 +16,12 @@ The data extracted from the API corresponds to Manufacturers’ Shipments, Inven
 - `cell_value`: The outcome of the corresponding data type.
 - `time`: Indicates the year and month. 
 
+# Pipeline structure
 
+The pipeline is divided in two stages. In the first one, raw data is extracted from the API corresponding to the last 5 years.
+In the second one, the data is filtered to retain only the monthly percentual change that has been seasonally adjusted. Then, it is organized such that the cell values are split across time and category. They are stored in different csv files according to the four data types.
+This allows to compare the evolution of the monthly percentual changes between all categories. 
 
-Each CSV file within the `processed` data folder contains the monthly percentual change in a specific data type for several manufacturing categories (which can be found [here](INSERT_LINK_HERE)). 
-
-The specific data types included in this project are:
-
-- **Value of Shipments (MPCVS)**
-- **New Orders (MPCNO)**
-- **Unfilled Orders (MPCUO)**
-- **Total Inventories (MPCTI)**
 
 ## Project Directory Structure
 
