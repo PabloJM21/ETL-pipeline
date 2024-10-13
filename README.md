@@ -6,7 +6,10 @@ The data extracted from the API corresponds to Manufacturers’ Shipments, Inven
 
 A more accurate description of the dataset can be found here: https://api.census.gov/data/timeseries/eits/advm3.html.
 
-The pipeline is divided in two stages. In the first one, raw data is extracted from the API corresponding to the last 5 years.
+The pipeline is divided in two stages. 
+
+In the first one, raw data is extracted from the API corresponding to the last 5 years.
+
 In the second one, the data is filtered to retain only the monthly percentual change that has been seasonally adjusted. Then, it is organized such that the cell values are split across time and category. They are stored in different csv files according to the four data types.
 This allows to compare the evolution of the monthly percentual changes between all categories. 
 
