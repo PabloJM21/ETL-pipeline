@@ -3,7 +3,7 @@
 This project is an ETL pipeline that extracts data from a public API and transforms it for better analysis.
 
 The data extracted from the API corresponds to Manufacturers’ Shipments, Inventories, and Orders from the U.S. Census Bureau. It contains the following variables:
-`data_type_code`
+- **`data_type_code`**
 
 `seasonally_adj`
 
