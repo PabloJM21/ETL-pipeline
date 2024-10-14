@@ -1,4 +1,6 @@
 # Main function to run the script
+from sql_functions import create_database, create_connection, create_tables, insert_data, query_data, transform_data, load_to_csv
+
 def main():
     create_database()
     connection = create_connection()
