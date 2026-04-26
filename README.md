@@ -86,3 +86,13 @@ sales-data-etl/
        ```bash
        run_etl.py
        ```
+
+
+
+
+
+| train \ test | flsim | arcgis | real |
+|---|---|---|---|
+| flsim | prec0.25(pixel): 0.891<br>**rec0.25(pixel): 0.873**<br>ap50: 0.790<br>ap50_90: 0.527<br>**throughput: 39.480** | prec0.25(pixel): 0.805<br>rec0.25(pixel): 0.782<br>ap50: 0.518<br>ap50_90: 0.280<br>throughput: 39.480 | **prec0.25(pixel): 0.931**<br>rec0.25(pixel): 0.868<br>**ap50: 0.898**<br>**ap50_90: 0.567**<br>throughput: 14.630 |
+| arcgis | prec0.25(pixel): 0.841<br>rec0.25(pixel): 0.791<br>ap50: 0.544<br>ap50_90: 0.313<br>throughput: 42.990 | prec0.25(pixel): 0.847<br>**rec0.25(pixel): 0.863**<br>ap50: 0.741<br>ap50_90: 0.494<br>**throughput: 55.290** | **prec0.25(pixel): 0.925**<br>rec0.25(pixel): 0.820<br>**ap50: 0.863**<br>**ap50_90: 0.601**<br>throughput: 16.030 |
+| all | prec0.25(pixel): 0.869<br>**rec0.25(pixel): 0.885**<br>ap50: 0.769<br>ap50_90: 0.495<br>throughput: 49.110 | prec0.25(pixel): 0.854<br>rec0.25(pixel): 0.861<br>ap50: 0.736<br>ap50_90: 0.487<br>**throughput: 54.660** | **prec0.25(pixel): 0.932**<br>rec0.25(pixel): 0.885<br>**ap50: 0.939**<br>**ap50_90: 0.675**<br>throughput: 18.100 |
