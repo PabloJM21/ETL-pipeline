@@ -96,3 +96,16 @@ sales-data-etl/
 | flsim | prec0.25(pixel): 0.891<br>**rec0.25(pixel): 0.873**<br>ap50: 0.790<br>ap50_90: 0.527<br>**throughput: 39.480** | prec0.25(pixel): 0.805<br>rec0.25(pixel): 0.782<br>ap50: 0.518<br>ap50_90: 0.280<br>throughput: 39.480 | **prec0.25(pixel): 0.931**<br>rec0.25(pixel): 0.868<br>**ap50: 0.898**<br>**ap50_90: 0.567**<br>throughput: 14.630 |
 | arcgis | prec0.25(pixel): 0.841<br>rec0.25(pixel): 0.791<br>ap50: 0.544<br>ap50_90: 0.313<br>throughput: 42.990 | prec0.25(pixel): 0.847<br>**rec0.25(pixel): 0.863**<br>ap50: 0.741<br>ap50_90: 0.494<br>**throughput: 55.290** | **prec0.25(pixel): 0.925**<br>rec0.25(pixel): 0.820<br>**ap50: 0.863**<br>**ap50_90: 0.601**<br>throughput: 16.030 |
 | all | prec0.25(pixel): 0.869<br>**rec0.25(pixel): 0.885**<br>ap50: 0.769<br>ap50_90: 0.495<br>throughput: 49.110 | prec0.25(pixel): 0.854<br>rec0.25(pixel): 0.861<br>ap50: 0.736<br>ap50_90: 0.487<br>**throughput: 54.660** | **prec0.25(pixel): 0.932**<br>rec0.25(pixel): 0.885<br>**ap50: 0.939**<br>**ap50_90: 0.675**<br>throughput: 18.100 |
+
+
+
+
+
+
+
+
+| train \ test | flsim | arcgis | real |
+|---|---|---|---|
+| flsim | **prec0.25(pixel): 0.949**<br>**rec0.25(pixel): 0.941**<br>ap50: 0.989<br>**ap50_90: 0.898**<br>**throughput: 37.370** | prec0.25(pixel): 0.888<br>rec0.25(pixel): 0.935<br>**ap50: 0.994**<br>ap50_90: 0.755<br>throughput: 34.450 | prec0.25(pixel): 0.944<br>rec0.25(pixel): 0.903<br>ap50: 0.973<br>ap50_90: 0.859<br>throughput: 17.620 |
+| arcgis | prec0.25(pixel): 0.873<br>rec0.25(pixel): 0.913<br>ap50: 0.978<br>ap50_90: 0.695<br>**throughput: 56.960** | prec0.25(pixel): 0.913<br>**rec0.25(pixel): 0.942**<br>**ap50: 0.994**<br>**ap50_90: 0.832**<br>throughput: 42.570 | **prec0.25(pixel): 0.931**<br>rec0.25(pixel): 0.873<br>ap50: 0.954<br>ap50_90: 0.813<br>throughput: 20.940 |
+| all | prec0.25(pixel): 0.930<br>**rec0.25(pixel): 0.955**<br>ap50: 0.989<br>ap50_90: 0.875<br>throughput: 54.440 | prec0.25(pixel): 0.924<br>rec0.25(pixel): 0.934<br>**ap50: 1.000**<br>ap50_90: 0.820<br>**throughput: 61.860** | **prec0.25(pixel): 0.940**<br>rec0.25(pixel): 0.921<br>ap50: 1.000<br>**ap50_90: 0.877**<br>throughput: 22.710 |
